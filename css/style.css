@@ -929,8 +929,6 @@ section { padding: 96px 0; }
 
 .trabalho-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
 }
 .trabalho { margin: 0; }
 .trabalho .foto {
@@ -948,9 +946,52 @@ section { padding: 96px 0; }
   color: var(--dourado-escuro);
 }
 
+/* galeria: quatro colunas e espaco reservado para foto que falta */
+.trabalho-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.trabalho-vazio .foto {
+  border: 1px dashed var(--dourado);
+  box-shadow: none;
+}
+.trabalho-vazio figcaption { color: var(--texto-suave); }
+
+/* tecnologias e recursos */
+.tecnologias {
+  margin-top: 60px;
+  padding-top: 48px;
+  border-top: 1px solid var(--linha);
+}
+.lista-tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.lista-tecnologias li {
+  padding: 10px 20px;
+  border: 1px solid var(--dourado-claro);
+  border-radius: 100px;
+  background: var(--bege);
+  font-size: 0.86rem;
+  color: var(--texto);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.lista-tecnologias li:hover {
+  background: var(--dourado);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  .trabalho-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 768px) {
   .lista-procedimentos { grid-template-columns: 1fr; gap: 10px; }
   .trabalho-grid { grid-template-columns: 1fr; gap: 30px; }
+  .lista-tecnologias li { font-size: 0.8rem; padding: 9px 16px; }
 }
 
 /* --------------------------------------------------------------------------
