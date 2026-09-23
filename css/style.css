@@ -856,6 +856,103 @@ section { padding: 96px 0; }
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visivel { opacity: 1; transform: none; }
 
+
+/* --------------------------------------------------------------------------
+   Novos blocos: tags do hero, listas de procedimentos, galeria de trabalho
+   -------------------------------------------------------------------------- */
+.hero-tags {
+  margin-top: 20px;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dourado-escuro);
+  font-weight: 600;
+}
+
+.grupo-titulo {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dourado-escuro);
+  text-align: center;
+  margin: 0 0 26px;
+  position: relative;
+}
+.grupo-titulo::after {
+  content: "";
+  display: block;
+  width: 40px; height: 1px;
+  background: var(--dourado-claro);
+  margin: 12px auto 0;
+}
+.painel .procedimentos-grid + .grupo-titulo,
+.lista-procedimentos + .grupo-titulo { margin-top: 56px; }
+
+.lista-procedimentos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px;
+  max-width: 880px;
+  margin: 0 auto 56px;
+}
+.lista-procedimentos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 18px;
+  background: var(--bege);
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+  font-size: 0.94rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+.lista-procedimentos li:hover { border-color: var(--dourado); transform: translateX(3px); }
+.lista-procedimentos svg {
+  width: 17px; height: 17px;
+  color: var(--dourado);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.nota-protocolos {
+  max-width: 640px;
+  margin: 52px auto 0;
+  text-align: center;
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--texto-suave);
+  padding-top: 26px;
+  border-top: 1px solid var(--linha);
+}
+
+.trabalho-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+.trabalho { margin: 0; }
+.trabalho .foto {
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.trabalho:hover .foto { transform: translateY(-6px); box-shadow: var(--sombra-alta); }
+.trabalho figcaption {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dourado-escuro);
+}
+
+@media (max-width: 768px) {
+  .lista-procedimentos { grid-template-columns: 1fr; gap: 10px; }
+  .trabalho-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
 /* --------------------------------------------------------------------------
    Responsivo
    -------------------------------------------------------------------------- */
