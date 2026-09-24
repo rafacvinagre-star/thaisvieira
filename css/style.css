@@ -807,7 +807,8 @@ section { padding: 96px 0; }
    -------------------------------------------------------------------------- */
 .whats-float {
   position: fixed;
-  right: 22px; bottom: 22px;
+  /* levantado para nao colidir com o selo "Powered by Netlify", no canto inferior direito */
+  right: 22px; bottom: 84px;
   width: 58px; height: 58px;
   border-radius: 50%;
   background: var(--whatsapp);
@@ -953,6 +954,61 @@ section { padding: 96px 0; }
   box-shadow: none;
 }
 .trabalho-vazio figcaption { color: var(--texto-suave); }
+
+/* bloco do video da terapia combinada */
+.video-bloco {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 72px;
+  padding-top: 56px;
+  border-top: 1px solid var(--linha);
+}
+.video-texto p {
+  font-size: 1.04rem;
+  color: var(--texto-suave);
+  margin-bottom: 30px;
+}
+.video-texto .eyebrow { font-size: 0.78rem; }
+.video-quadro {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--sombra-alta);
+  background: var(--bege-escuro);
+  max-width: 340px;
+  margin: 0 auto;
+}
+.video-quadro video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .video-bloco { grid-template-columns: 1fr; gap: 34px; text-align: center; }
+  .video-texto .btn { width: 100%; }
+  .video-quadro { max-width: 100%; }
+}
+
+/* etiqueta de foto de banco de imagens (remover ao entrar a foto real) */
+.selo-ilustrativa {
+  position: absolute;
+  left: 10px; bottom: 10px;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--texto-suave);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 100px;
+}
 
 /* tecnologias e recursos */
 .tecnologias {
